@@ -10,10 +10,10 @@ import {Provider} from 'react-redux';
 const firstReducerInitialState = 0;
 const firstReducer = (state = firstReducerInitialState, action) =>{
   console.log('in firstReducer', state, action);
-  if(action.type === 'click'){
-    return state +1;
-  }else if(action.type === 'unClick'){
-    return state - 1;
+  if(action.type === 'pickUp'){
+    return state + action.payload;
+  }else if(action.type === 'dropOff'){
+    return state - action.payload;
   }
   return state;
  
